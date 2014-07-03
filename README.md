@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MTAuth
 このクラスは、Movable TypeのDataAPIをPHPで利用するためのクラスです。  
 ログイン後の処理も簡単に行えます。
@@ -21,8 +20,8 @@ require_once 'MTAuth.php';
 
 ```
 $instance = new MTAuth(array(
-	'url' => 'http://your-domain/mt/mt-data-api.cgi',
-	'clientId' => 'MYAuth'
+    'url' => 'http://your-domain/mt/mt-data-api.cgi',
+    'clientId' => 'MYAuth'
 ));
 ```
 
@@ -39,16 +38,16 @@ $instance = new MTAuth(array(
 
 ```
 $status = $instance->login(
-	'hoge',
-   	'hogehogehoge'
+    'hoge',
+    'hogehogehoge'
 );
 ```
 
 ### userRequest
 このメソッドはリクエストを送るためのメソッドです。  
 ※ まだ、postとgetのHttpメソッドしか対応していないので、updateとdeleteは現在使用不可です。  
-データは配列で送ります。
-戻り値でBooleanで帰ってくるため、ログインできたかif文で判断できます。
+データは配列で送ります。  
+戻り値でBooleanで帰ってくるため、ログインできたかif文で判断できます。  
 必要パラメーター
 
 | パラメーター | 必須 | 説明 | 例 | デフォルト |
@@ -64,13 +63,13 @@ $status = $instance->login(
 $status = $instance->userRequest(array(
     'method'        => 'post',
     'url'           => '/v1/sites/1/entries',
-    'request'		=> 'entry',
-    'json_params'	=> true,
-    'login'			=> true,
-    'parms'			=> array(
-    	'title'			 => 'Test',
-    	'body'			=> 'TestContets',
-    	'more'			=> 'TestMore'
+    'request'       => 'entry',
+    'json_params'   => true,
+    'login'         => true,
+    'parms'         => array(
+        'title'         => 'Test',
+        'body'          => 'TestContets',
+        'more'          => 'TestMore'
     )
 ));
 ```
@@ -91,9 +90,3 @@ $response = $instance->response;
 
 これを、継承し使うのもよし、そのまま使うのよし。  
 自由にお使いください。
-=======
-MTAuth
-======
-
-Movable Type の DataAPIを使用するヘルパークラス
->>>>>>> temp
