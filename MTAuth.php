@@ -35,7 +35,8 @@ class MTAuth
 
     /**
      *  Login method
-     *  @param  array   Username Password
+     *  @param  String  Username
+     *  @param  String  Password
      *  @return boolean true or false
      */
     public function login($username = null, $password = null)
@@ -115,7 +116,7 @@ class MTAuth
 
     /**
      *  Replace Json
-     *  @param String(Json)
+     *  @param String   Json
      *  @return array
      */
     private function decodeJson($response = null)
