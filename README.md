@@ -1,4 +1,4 @@
-# MTAuth Test
+# MTAuth
 このクラスは、Movable TypeのDataAPIをPHPで利用するためのクラスです。  
 ログイン後の処理も簡単に行えます。
 
