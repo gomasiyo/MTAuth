@@ -50,9 +50,9 @@ class MTAuth
         }
 
         $params = array(
-            'username'      => $username,
-            'password'      => $password,
-            'clientId'      => $this->config['clientId']
+            'username'  => $username,
+            'password'  => $password,
+            'clientId'  => $this->config['clientId']
         );
 
         $status = $this->userRequest(array(
@@ -70,6 +70,55 @@ class MTAuth
             return false;
         }
 
+
+    }
+
+    /**
+     * InsertEntries method
+     * @param Int    BlogID
+     * @param String Title
+     * @param String Body
+     * @param String More
+     * @return boolean true or false
+     */
+    public function insertEntries($blogid = null, $title = null, $body = null, $more = null)
+    {
+
+        $url = "/v1/sites/{$blogid}/entries";
+
+        if(empty($blogid) || empty($body)) {
+            $this->response['error'] = 'EmptyBlogID_or_EmptyBody';
+            return false;
+        }
+
+        $defaultParams = array(
+            'title' => null,
+            'body'  => null,
+            'more'  => null
+        );
+
+        $setParams = array(
+            'title' => $title,
+            'body'  => $body,
+            'more'  => $more
+        );
+
+        $params = array_merge($defaultParams, $setParams);
+
+        $status = $this->userRequest(array(
+            'method'        => 'post',
+            'url'           => $url,
+            'request'       => 'entry',
+            'json_params'   => true,
+            'login'         => true,
+            'params'        => $params
+        ));
+
+        if($status) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
 

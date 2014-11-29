@@ -13,34 +13,19 @@ $status = $instance->login(
 
 if($status) {
 
-    // ログインが出来た時の処理
-
-    // ブログID
-    $blogId = 1;
-    // 記事作成
-    $entry = array(
-        'title'     => 'サンプル用のタイトル',
-        'body'      => 'サンプル用の記事',
-        'more'      => 'サンプル用の追記'
-    );
-
-    $status = $instance->userRequest(array(
-        'url'           => "/v1/sites/{$blogId}/entries",
-        'request'       => 'entry',
-        'json_params'   => true,
-        'login'         => true,
-        'params'        => $entry
-    ));
+    $status = $instance->insertEntries(1, null, "TestBody");
 
     if($status) {
         echo "Success";
     } else {
         echo "failed";
+    print_r($instance->response);
     }
 
 } else {
 
     // ログインが失敗した時の処理
     echo "Login Failed";
+
 }
 
