@@ -1,14 +1,14 @@
 <?php
 
-require_once '../MTAuth.php';
+require_once '../MTAuth4p.php';
 
 $instance = new MTAuth(array(
     'url' => 'http://your-domain/mt/mt-data-api.cgi'
 ));
 
 $status = $instance->login(
-    'hoge',
-    'hogehoge'
+    "id",
+    "password"
 );
 
 if($status) {

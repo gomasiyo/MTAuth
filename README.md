@@ -1,4 +1,4 @@
-# MTAuth
+# MTAuth4p
 このクラスは、Movable TypeのDataAPIをPHPで利用するためのクラスです。  
 ログイン後の処理も簡単に行えます。
 
@@ -7,7 +7,7 @@
 まず、本クラスを読み込みます。
 
 ```
-require_once 'MTAuth.php';
+require_once 'MTAuth4p.php';
 ```
 
 次にインスタンス作成します。データは配列で送ります。  
@@ -19,7 +19,7 @@ require_once 'MTAuth.php';
 | clientId | false | このIDは認証やCookieに利用されます。任意で変更できます | MTAuth| MTAuth |
 
 ```
-$instance = new MTAuth(array(
+$instance = new MTAuth4p(array(
     'url' => 'http://your-domain/mt/mt-data-api.cgi',
     'clientId' => 'MYAuth'
 ));
